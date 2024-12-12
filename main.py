@@ -2,6 +2,7 @@ from add_book import add_book
 from delete_book import delete_book
 from lend_book import lend_book
 from restore_all_books import restore_all_books
+from return_book import return_book
 from update_book import update_book
 from view_all_books import view_all_books
 
@@ -34,16 +35,19 @@ while True:
         add_book(book_list)
 
     elif option == '2':
-        book_list = update_book(book_list)
+        update_book(book_list)
 
     elif option == '3':
-        book_list = delete_book(book_list)
+        delete_book(book_list)
 
     elif option == '4':
         view_all_books()
 
     elif option == '5':
-        book_list = lend_book(book_list)
+        lend_book(book_list)
+
+    elif option == '6':
+        return_book(book_list)
 
     else:
         print('Please, Select A Valid Option!!\n')

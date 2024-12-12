@@ -2,10 +2,12 @@ from datetime import datetime
 from datetime import timedelta
 import json
 
-from restore_lender_details import restore_lender_details
+from restore_borrower_details import restore_borrower_details
 from save_all_books import save_all_books
+from save_borrower_details import save_borrower_details
 
 
+# function to lend book declared here
 def lend_book(book_list):
     print('\n---------------------------')
     print('LEND BOOK')
@@ -18,7 +20,7 @@ def lend_book(book_list):
             if book['quantity'] > 0:
                 print('\nBook Found!!\n')
 
-                lender_details_list = restore_lender_details()
+                borrower_details_list = restore_borrower_details()
 
                 name = input("Enter Borrower's Name: ")
                 phone = input("Enter Borrower's Phone Number: ")
@@ -30,8 +32,8 @@ def lend_book(book_list):
                 # adding 7 days to borrowed date as return due date automatically here
                 return_due_date = (current_datetime + timedelta(days=7)).strftime('%d-%m-%Y %H:%M:%S')
 
-                # creating lender details dictionary here
-                lender_details = {
+                # creating borrower details dictionary here
+                borrower_details = {
                     'name': name,
                     'phone': phone,
                     'book_title': search_book,
@@ -39,12 +41,12 @@ def lend_book(book_list):
                     'return_due_date': return_due_date
                 }
 
-                lender_details_list.append(lender_details)
+                borrower_details_list.append(borrower_details)
 
-                try:
-                    with open('lender_details.json', 'w') as lender_details_file:
-                        json.dump(lender_details_list, lender_details_file, indent=4)
+                # saving borrower details here
+                response = save_borrower_details(borrower_details_list)
 
+                if response:
                     # decreasing book quantity after lending here
                     book['quantity'] -= 1
                     save_all_books(book_list)
@@ -52,8 +54,7 @@ def lend_book(book_list):
                     print('Book Lent Successfully!!\n')
 
                     return book_list
-                except Exception as e:
-                    print('Something Went Wrong While Lending Books!!\n')
+
 
             else:
                 print('Insufficient Quantity!!\n')
