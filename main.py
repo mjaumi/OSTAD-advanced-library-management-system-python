@@ -1,5 +1,6 @@
 from add_book import add_book
 from delete_book import delete_book
+from lend_book import lend_book
 from restore_all_books import restore_all_books
 from update_book import update_book
 from view_all_books import view_all_books
@@ -13,6 +14,8 @@ while True:
     print('2. Update A Book')
     print('3. Delete A Book')
     print('4. View All Books')
+    print('5. Lend A Book')
+    print('6. Return Book')
 
     # restoring all the books while application starts here
     book_list = restore_all_books()
@@ -38,6 +41,9 @@ while True:
 
     elif option == '4':
         view_all_books()
+
+    elif option == '5':
+        book_list = lend_book(book_list)
 
     else:
         print('Please, Select A Valid Option!!\n')
