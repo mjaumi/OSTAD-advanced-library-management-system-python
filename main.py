@@ -1,3 +1,5 @@
+from add_book import add_book
+
 book_list = []
 
 while True:
@@ -19,7 +21,7 @@ while True:
         break
 
     elif option == '1':
-        pass
+        add_book(book_list)
 
     else:
         print('Please, Select A Valid Option!!\n')

@@ -1,0 +1,11 @@
+[
+    {
+        "title": "Book 1",
+        "author": "Aumi",
+        "year": 2023,
+        "price": 300,
+        "quantity": 20,
+        "isbn": 41916,
+        "book_added_at": "12-12-2024 21:30:12"
+    }
+]
