@@ -1,6 +1,6 @@
 import json
 
-def view_all_books(book_list):
+def view_all_books():
     print('\n---------------------------')
     print('VIEW ALL BOOKS')
     print('---------------------------\n')

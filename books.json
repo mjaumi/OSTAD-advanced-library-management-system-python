@@ -11,12 +11,12 @@
     },
     {
         "title": "Book B",
-        "author": "Rafsan",
-        "year": 2024,
+        "author": "Akash",
+        "year": 2023,
         "price": 300,
-        "quantity": 30,
+        "quantity": 40,
         "isbn": 85572,
         "book_added_at": "12-12-2024 22:09:58",
-        "last_updated_at": ""
+        "last_updated_at": "12-12-2024 22:24:00"
     }
 ]
