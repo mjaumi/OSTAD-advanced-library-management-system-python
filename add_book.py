@@ -12,36 +12,53 @@ def add_book(book_list):
 
     title = input('Enter Book Title: ')
     author = input('Enter Author Name: ')
-    year = int(input('Enter Publishing Year: '))
-    price = int(input('Enter Book Price: '))
+    year = input('Enter Publishing Year: ')
+
+    while True:
+        try:
+            price = int(input('Enter Book Price: '))
+            break
+        except ValueError:
+            print('Invalid Input. Price Must Be An Integer!!\n')
 
     while True:
         try:
             quantity = int(input('Enter Quantity: '))
             break
         except ValueError:
-            print('Invalid input. Please enter a valid integer.')
+            print('Invalid Input. Quantity Must Be An Integer!!\n')
 
-    # generating random ISBN here
-    isbn = random.randint(10000, 99999)
-    
-    # picking book added time here
-    book_added_at = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+    # implementing input validation while adding books here
+    if price < 1:
+        print('Invalid Input. Price Must Greater Than Zero!!\n')
 
-    # creating new book dictionary here
-    new_book = {
-        'title': title,
-        'author': author,
-        'year': year,
-        'price': price,
-        'quantity': quantity,
-        'isbn': isbn,
-        'book_added_at': book_added_at,
-        'last_updated_at': ''
-    }
+    elif quantity < 0:
+        print('Invalid Input. Quantity Cannot Be Negative!!\n')
 
-    book_list.append(new_book)
+    elif not year.isdigit():
+        print('Invalid Input. Publishing Year Must Be A Number!!\n')
 
-    save_all_books(book_list)
+    else :
+        # generating random ISBN here
+        isbn = random.randint(10000, 99999)
 
-    print('Book Added Successfully!!\n')
+        # picking book added time here
+        book_added_at = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+
+        # creating new book dictionary here
+        new_book = {
+            'title': title,
+            'author': author,
+            'year': year,
+            'price': price,
+            'quantity': quantity,
+            'isbn': isbn,
+            'book_added_at': book_added_at,
+            'last_updated_at': ''
+        }
+
+        book_list.append(new_book)
+
+        save_all_books(book_list)
+
+        print('Book Added Successfully!!\n')
