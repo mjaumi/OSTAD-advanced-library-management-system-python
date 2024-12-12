@@ -1,4 +1,5 @@
 from add_book import add_book
+from delete_book import delete_book
 from restore_all_books import restore_all_books
 from update_book import update_book
 from view_all_books import view_all_books
@@ -31,6 +32,9 @@ while True:
 
     elif option == '2':
         book_list = update_book(book_list)
+
+    elif option == '3':
+        book_list = delete_book(book_list)
 
     elif option == '4':
         view_all_books()
