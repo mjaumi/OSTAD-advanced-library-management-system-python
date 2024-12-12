@@ -12,53 +12,62 @@ def add_book(book_list):
 
     title = input('Enter Book Title: ')
     author = input('Enter Author Name: ')
-    year = input('Enter Publishing Year: ')
+
+    while True:
+        year = input('Enter Publishing Year: ')
+
+        if not year.isdigit():
+            print('Invalid Input. Publishing Year Must Be A Number!!\n')
+            continue
+
+        break
+
 
     while True:
         try:
             price = int(input('Enter Book Price: '))
+
+            if price < 1:
+                print('Invalid Input. Price Must Greater Than Zero!!\n')
+                continue
+
             break
         except ValueError:
             print('Invalid Input. Price Must Be An Integer!!\n')
 
+
     while True:
         try:
             quantity = int(input('Enter Quantity: '))
+
+            if quantity < 0:
+                print('Invalid Input. Quantity Cannot Be Negative!!\n')
+                continue
+
             break
         except ValueError:
             print('Invalid Input. Quantity Must Be An Integer!!\n')
 
-    # implementing input validation while adding books here
-    if price < 1:
-        print('Invalid Input. Price Must Greater Than Zero!!\n')
+    # generating random ISBN here
+    isbn = random.randint(10000, 99999)
 
-    elif quantity < 0:
-        print('Invalid Input. Quantity Cannot Be Negative!!\n')
+    # picking book added time here
+    book_added_at = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
 
-    elif not year.isdigit():
-        print('Invalid Input. Publishing Year Must Be A Number!!\n')
+    # creating new book dictionary here
+    new_book = {
+        'title': title,
+        'author': author,
+        'year': year,
+        'price': price,
+        'quantity': quantity,
+        'isbn': isbn,
+        'book_added_at': book_added_at,
+        'last_updated_at': ''
+    }
 
-    else :
-        # generating random ISBN here
-        isbn = random.randint(10000, 99999)
+    book_list.append(new_book)
 
-        # picking book added time here
-        book_added_at = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+    save_all_books(book_list)
 
-        # creating new book dictionary here
-        new_book = {
-            'title': title,
-            'author': author,
-            'year': year,
-            'price': price,
-            'quantity': quantity,
-            'isbn': isbn,
-            'book_added_at': book_added_at,
-            'last_updated_at': ''
-        }
-
-        book_list.append(new_book)
-
-        save_all_books(book_list)
-
-        print('Book Added Successfully!!\n')
+    print('Book Added Successfully!!\n')
