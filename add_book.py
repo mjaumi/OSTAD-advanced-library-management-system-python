@@ -36,7 +36,8 @@ def add_book(book_list):
         'price': price,
         'quantity': quantity,
         'isbn': isbn,
-        'book_added_at': book_added_at
+        'book_added_at': book_added_at,
+        'last_updated_at': ''
     }
 
     book_list.append(new_book)
