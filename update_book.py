@@ -12,11 +12,46 @@ def update_book(book_list):
     
     for book in book_list:
         if book['title'] == search_book:
-            title = input('Enter Book Title: ')
-            author = input('Enter Author Name: ')
-            year = int(input('Enter Publishing Year: '))
-            price = int(input('Enter Book Price: '))
-            quantity = int(input('Enter Quantity: '))
+            title = input('Enter Updated Book Title: ')
+            author = input('Enter Updated Author Name: ')
+
+            while True:
+                year = input('Enter Updated Publishing Year: ')
+
+                if year and not year.isdigit():
+                    print('Invalid Input. Publishing Year Must Be A Number!!\n')
+                    continue
+
+                break
+
+            while True:
+                try:
+                    price = input('Enter Updated Book Price: ')
+
+                    if price:
+                        price = int(price)
+                        if int(price) < 1:
+                            print('Invalid Input. Price Must Greater Than Zero!!\n')
+                            continue
+
+                    break
+                except ValueError:
+                    print('Invalid Input. Price Must Be An Integer!!\n')
+
+
+            while True:
+                try:
+                    quantity = input('Enter Quantity: ')
+
+                    if quantity:
+                        quantity = int(quantity)
+                        if quantity < 0:
+                            print('Invalid Input. Quantity Cannot Be Negative!!\n')
+                            continue
+
+                    break
+                except ValueError:
+                    print('Invalid Input. Price Must Be An Integer!!\n')
 
             # capturing updated time from datetime here
             book_last_updated_at = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
