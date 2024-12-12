@@ -1,7 +1,16 @@
-{
-    "name": "Milhan",
-    "phone": "123456",
-    "book_title": "Book A",
-    "borrowed_at": "12-12-2024 23:06:45",
-    "return_due_date": "19-12-2024 23:06:45"
-}
+[
+    {
+        "name": "Milhan",
+        "phone": "123456",
+        "book_title": "Book A",
+        "borrowed_at": "12-12-2024 23:06:45",
+        "return_due_date": "19-12-2024 23:06:45"
+    },
+    {
+        "name": "Joardar",
+        "phone": "12345",
+        "book_title": "Book A",
+        "borrowed_at": "12-12-2024 23:17:02",
+        "return_due_date": "19-12-2024 23:17:02"
+    }
+]

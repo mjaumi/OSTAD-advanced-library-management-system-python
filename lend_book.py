@@ -2,6 +2,7 @@ from datetime import datetime
 from datetime import timedelta
 import json
 
+from restore_lender_details import restore_lender_details
 from save_all_books import save_all_books
 
 
@@ -16,6 +17,8 @@ def lend_book(book_list):
         if book['title'] == search_book:
             if book['quantity'] > 0:
                 print('\nBook Found!!\n')
+
+                lender_details_list = restore_lender_details()
 
                 name = input("Enter Borrower's Name: ")
                 phone = input("Enter Borrower's Phone Number: ")
@@ -36,9 +39,11 @@ def lend_book(book_list):
                     'return_due_date': return_due_date
                 }
 
+                lender_details_list.append(lender_details)
+
                 try:
                     with open('lender_details.json', 'w') as lender_details_file:
-                        json.dump(lender_details, lender_details_file, indent=4)
+                        json.dump(lender_details_list, lender_details_file, indent=4)
 
                     # decreasing book quantity after lending here
                     book['quantity'] -= 1
