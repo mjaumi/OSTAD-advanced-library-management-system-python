@@ -10,8 +10,26 @@ def add_book(book_list):
     print('ADD NEW BOOK')
     print('---------------------------\n')
 
-    title = input('Enter Book Title: ')
-    author = input('Enter Author Name: ')
+
+    while True:
+        title = input('Enter Book Title: ')
+
+        if not title:
+            print('Invalid Input. Title Cannot Be Empty!!\n')
+            continue
+
+        break
+
+
+    while True:
+        author = input('Enter Author Name: ')
+
+        if not author:
+            print('Invalid Input. Author Cannot Be Empty!!\n')
+            continue
+
+        break
+
 
     while True:
         year = input('Enter Publishing Year: ')

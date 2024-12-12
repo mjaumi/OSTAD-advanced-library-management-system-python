@@ -28,5 +28,15 @@
         "isbn": 44477,
         "book_added_at": "13-12-2024 00:03:56",
         "last_updated_at": ""
+    },
+    {
+        "title": "Book C",
+        "author": "Akash",
+        "year": "2023",
+        "price": 400,
+        "quantity": 50,
+        "isbn": 96309,
+        "book_added_at": "13-12-2024 00:07:32",
+        "last_updated_at": ""
     }
 ]
