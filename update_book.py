@@ -74,6 +74,6 @@ def update_book(book_list):
 
             print('Book Updated Successfully!!\n')
 
-            return book_list
+            return
 
     print('Book Not Found!!\n')

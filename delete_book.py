@@ -15,6 +15,6 @@ def delete_book(book_list):
             save_all_books(book_list)
 
             print('Book Deleted Successfully!!\n')
-            return book_list
+            return
 
     print('Book Not Found!!\n')

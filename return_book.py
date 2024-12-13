@@ -30,6 +30,6 @@ def return_book(book_list):
 
                         print('Book Returned Successfully!!\n')
 
-                        return book_list
+                        return
 
     print('Borrower Not Found!!\n')

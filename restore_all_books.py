@@ -9,4 +9,4 @@ def restore_all_books():
 
         return book_list
     except Exception as e:
-        print('Something Went Wrong While Restoring The Books!!\n')
+        return []

@@ -73,10 +73,11 @@ def lend_book(book_list):
 
                     print('Book Lent Successfully!!\n')
 
-                    return book_list
+                    return
 
 
             else:
                 print('Insufficient Quantity!!\n')
+                return
 
     print('Book Not Found!!\n')

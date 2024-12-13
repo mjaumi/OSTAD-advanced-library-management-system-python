@@ -9,5 +9,4 @@ def restore_borrower_details():
         return borrower_details_list
 
     except Exception as e:
-        print('Something Went Wrong While Restoring The Borrower Details!!\n')
         return []

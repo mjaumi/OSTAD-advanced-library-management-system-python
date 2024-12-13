@@ -1,23 +1,9 @@
 [
     {
-        "name": "Milhan",
-        "phone": "",
+        "name": "Ash",
+        "phone": "01788744803",
         "book_title": "Book A",
-        "borrowed_at": "13-12-2024 15:59:32",
-        "return_due_date": "20-12-2024 15:59:32"
-    },
-    {
-        "name": "Akash",
-        "phone": "12345",
-        "book_title": "Book A",
-        "borrowed_at": "13-12-2024 16:00:58",
-        "return_due_date": "20-12-2024 16:00:58"
-    },
-    {
-        "name": "JJ",
-        "phone": "0134564565",
-        "book_title": "Book C",
-        "borrowed_at": "13-12-2024 16:03:19",
-        "return_due_date": "20-12-2024 16:03:19"
+        "borrowed_at": "13-12-2024 16:26:06",
+        "return_due_date": "20-12-2024 16:26:06"
     }
 ]
