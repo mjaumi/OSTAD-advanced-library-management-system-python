@@ -1,6 +1,5 @@
 from datetime import datetime
 from datetime import timedelta
-import json
 
 from restore_borrower_details import restore_borrower_details
 from save_all_books import save_all_books
@@ -22,8 +21,29 @@ def lend_book(book_list):
 
                 borrower_details_list = restore_borrower_details()
 
-                name = input("Enter Borrower's Name: ")
-                phone = input("Enter Borrower's Phone Number: ")
+                while True:
+                    name = input("Enter Borrower's Name: ")
+
+                    if not name:
+                        print("Invalid Input. Borrower's Name Cannot Be Empty!!\n")
+                        continue
+
+                    break
+
+
+                while True:
+                    phone = input("Enter Borrower's Phone Number: ")
+
+                    if not phone:
+                        print("Invalid Input. Borrower's Phone Number Cannot Be Empty!!\n")
+                        continue
+
+                    if not phone.isdigit():
+                        print("Invalid Input. Borrower's Phone Number Must Contain Only Numbers!!\n")
+                        continue
+
+                    break
+
 
                 current_datetime = datetime.now()
 
