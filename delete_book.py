@@ -1,6 +1,6 @@
 from save_all_books import save_all_books
 
-
+# function to delete book from JSON file declared here
 def delete_book(book_list):
     print('\n---------------------------')
     print('DELETE BOOK')

@@ -2,7 +2,7 @@ from _datetime import datetime
 
 from save_all_books import save_all_books
 
-
+# function to update books in JSON file declared here
 def update_book(book_list):
     print('\n---------------------------')
     print('UPDATE BOOK')

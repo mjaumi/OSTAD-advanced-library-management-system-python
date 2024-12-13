@@ -1,5 +1,6 @@
 import json
 
+# function to view all books from JSON file declared here
 def view_all_books():
     print('\n---------------------------')
     print('VIEW ALL BOOKS')
