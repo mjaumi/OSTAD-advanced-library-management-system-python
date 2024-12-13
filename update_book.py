@@ -53,6 +53,13 @@ def update_book(book_list):
                 except ValueError:
                     print('Invalid Input. Price Must Be An Integer!!\n')
 
+            # checking if similar book title already exists or not
+            if title:
+                for existing_book in book_list:
+                    if existing_book['title'] == title:
+                        print('Book With Similar Title Already Exists!!\n')
+                        return
+
             # capturing updated time from datetime here
             book_last_updated_at = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
 

@@ -66,6 +66,12 @@ def add_book(book_list):
         except ValueError:
             print('Invalid Input. Quantity Must Be An Integer!!\n')
 
+    # checking if similar book title already exists or not
+    for book in book_list:
+        if book['title'] == title:
+            print('Book With Similar Title Already Exists!!\n')
+            return
+
     # generating random ISBN here
     isbn = random.randint(10000, 99999)
 
